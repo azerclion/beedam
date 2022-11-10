@@ -12,6 +12,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+import { forwardRef } from "react";
+
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 
@@ -66,10 +68,9 @@ const ListHeader = ({ children }) => {
     </Text>
   );
 };
-
-export default function LargeWithNewsletter() {
+const LargeWithNewsletter = forwardRef((props, ref) => {
   return (
-    <Box bg={"gray.900"}>
+    <Box bg={"gray.900"} ref={ref}>
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
           templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 2fr" }}
@@ -133,4 +134,6 @@ export default function LargeWithNewsletter() {
       </Container>
     </Box>
   );
-}
+});
+
+export default LargeWithNewsletter;

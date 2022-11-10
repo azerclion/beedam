@@ -1,9 +1,11 @@
 import { Box, Heading, Text, Button, Stack, Flex } from "@chakra-ui/react";
 
-export default function CallToActionWithAnnotation() {
+import { forwardRef } from "react";
+
+const HeroTwo = forwardRef((props, ref) => {
   return (
     <>
-      <Flex height={"100vh"} justify={"center"} align={"center"}>
+      <Flex height={"100vh"} justify={"center"} align={"center"} ref={ref}>
         <Stack
           as={Box}
           textAlign={"center"}
@@ -43,4 +45,5 @@ export default function CallToActionWithAnnotation() {
       </Flex>
     </>
   );
-}
+});
+export default HeroTwo;

@@ -10,6 +10,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 
+import { forwardRef } from "react";
 
 import keyImage from "@assets/key.png";
 import diaryImage from "@assets/diary.png";
@@ -30,9 +31,9 @@ function PriceWrapper({ children }) {
   );
 }
 
-export default function ThreeTierPricing() {
+const Pricing = forwardRef((props, ref) => {
   return (
-    <Box py={12}>
+    <Box py={12} ref={ref}>
       <VStack spacing={2} textAlign="center">
         <Heading as="h1" fontSize="4xl" fontFamily={"SEBANG_Gothic_Bold"}>
           당신만의 비밀 NFT를 만들고 보관하세요
@@ -147,4 +148,6 @@ export default function ThreeTierPricing() {
       </Stack>
     </Box>
   );
-}
+});
+
+export default Pricing;
